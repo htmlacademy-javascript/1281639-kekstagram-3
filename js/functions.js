@@ -3,7 +3,7 @@ function checkLength(string, length) {
   return (string.length <= length);
 }
 
-function isPolindrom (string) {
+function ispalindrome (string) {
   const str1 = string.replaceAll(' ', '').toLowerCase();
   const length = str1.length;
   let str2 = '';
@@ -20,5 +20,5 @@ function printNumber (string) {
 
 
 checkLength('проверяемая строка', 20);
-isPolindrom('asd');
+ispalindrome('asd');
 printNumber('j435nkbjg3435');
