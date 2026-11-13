@@ -18,7 +18,34 @@ function printNumber (string) {
   return (str1 === '') ? NaN : parseInt(str1, 10);
 }
 
+function timeToMinutesFromMidnight(time) {
+  //функция возвращает количество минут с начала суток из стоки в формате ЧЧ:мм
+  const timeArray = time.split(':');
+  return parseInt(timeArray[0], 10) * 60 + parseInt(timeArray[1], 10);
+}
+
+function chackTime (startWorkTime, endWorkTime, startMeetingTime, meetingDuration) {
+  if (timeToMinutesFromMidnight(startWorkTime) > timeToMinutesFromMidnight(endWorkTime)) {
+    return false;
+  }
+  if (timeToMinutesFromMidnight(startWorkTime) > timeToMinutesFromMidnight(startMeetingTime)) {
+    return false;
+  }
+  if (timeToMinutesFromMidnight(startMeetingTime) > timeToMinutesFromMidnight(endWorkTime)) {
+    return false;
+  }
+  if ((timeToMinutesFromMidnight(startMeetingTime) + meetingDuration) > timeToMinutesFromMidnight(endWorkTime)) {
+    return false;
+  }
+  return true;
+}
+
 
 checkLength('проверяемая строка', 20);
 ispalindrome('asd');
 printNumber('j435nkbjg3435');
+chackTime('08:00', '17:30', '14:00', 90);
+chackTime('8:0', '10:0', '8:0', 120);
+chackTime('08:00', '14:30', '14:00', 90);
+chackTime('14:00', '17:30', '08:0', 90);
+chackTime('8:00', '17:30', '08:00', 900);
