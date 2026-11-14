@@ -45,7 +45,3 @@ checkLength('проверяемая строка', 20);
 ispalindrome('asd');
 printNumber('j435nkbjg3435');
 chackTime('08:00', '17:30', '14:00', 90);
-chackTime('8:0', '10:0', '8:0', 120);
-chackTime('08:00', '14:30', '14:00', 90);
-chackTime('14:00', '17:30', '08:0', 90);
-chackTime('8:00', '17:30', '08:00', 900);
